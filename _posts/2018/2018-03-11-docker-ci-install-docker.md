@@ -1,6 +1,6 @@
 ---
 layout: post
-title: docker 持续集成
+title: docker 持续集成（1） - 安装 docker
 categories:
 - dev
 tags:
