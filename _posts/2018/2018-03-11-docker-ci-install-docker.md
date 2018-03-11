@@ -15,7 +15,7 @@ tags:
 
 ## 安装 docker
 
-以 centos 7 为例。官方文档：官方文档：https://docs.docker.com/install/linux/docker-ce/centos/ 。
+以 centos 7 为例。官方文档：官方文档：[https://docs.docker.com/](https://docs.docker.com/install/linux/docker-ce/centos/) 。
 
 ### 第一步，卸载 docker 的旧版本，如果没有旧版本可省略这一步。
 
@@ -62,7 +62,7 @@ tags:
 
     sudo yum install docker-ce
 
-docker 安装成功后，系统中增加了一个 docker group，但是该 group 下没有用户。如果希望用非 root 用户执行 docker 命令，需要新增一个用户，加入到 docker group 中。参考：https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user 。
+docker 安装成功后，系统中增加了一个 docker group，但是该 group 下没有用户。如果希望用非 root 用户执行 docker 命令，需要新增一个用户，加入到 docker group 中。参考：[https://docs.docker.com/](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user) 。
 
 生产系统下最好是安装指定版本的 docker，使用下面的命令列出 docker 可用的版本，然后选择安装。
 
