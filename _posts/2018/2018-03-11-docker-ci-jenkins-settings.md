@@ -21,26 +21,32 @@ tags:
 
     yum install git -y
 
-然后，在工程源码文件夹根目录下，新建一个 ci.sh 文件，内容如下：
+然后，在当前用户的 home目录下，clone 工程源代码，如果有登陆验证，可能需要在 url 加上账号密码，或者换成 ssh 方式。
+
+    cd ~/
+    git clone https://gitee.com/zhuxulu/project.git
+
+其次，进入工程源码文件夹根目录，新建一个 ci.sh 文件，内容如下：
 
     #!/bin/bash
 
     # 停止并删除 tomcat 容器。
     docker stop $(docker ps -qa --filter name='tomcat')
+    # 暂停3秒
+    sleep 3
 
     # 进入工程源码文件夹，删除 target 编译目录，然后 git pull 更新代码。
     cd ~/project && rm -rf ./target && git pull
 
     # 编译工程
-    docker run --rm --name tomcat  -v "$(pwd)":/project  -v /usr/tmp/.m2:/root/.m2  -w /project maven:3.5.3-jdk-8 mvn package
+    docker run --rm -v "$(pwd)":/project  -v /usr/tmp/.m2:/root/.m2  -w /project maven:3.5.3-jdk-8 mvn package
 
     # 将编译后的 war 包映射到 tomcat 容器中，并启动运行 tomcat 容器。
     docker run -d --rm -p 8888:8080 -v $PWD/target/easygo.war:/usr/local/tomcat/webapps/easygo.war --name tomcat  tomcat:7.0.85-jre7
 
-其次，在当前用户的 home目录下，clone 工程源代码，如果有登陆验证，可能需要在 url 加上账号密码，或者换成 ssh 方式。
+将 ci.sh 的权限改为可执行。
 
-    cd ~/
-    git clone https://gitee.com/zhuxulu/project.git
+    chmod 777 ci.sh
 
 最后，对 jenkins 进行配置，实现定时构建。配置方法如下。
 
