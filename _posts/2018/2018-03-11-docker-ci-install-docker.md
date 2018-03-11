@@ -13,7 +13,7 @@ tags:
 - tomcat
 ---
 
-## 安装 docker
+#### 安装 docker
 
 以 centos 7 为例。官方文档：官方文档：[https://docs.docker.com/](https://docs.docker.com/install/linux/docker-ce/centos/) 。
 
@@ -34,7 +34,7 @@ tags:
 
     sudo rm -rf /var/lib/docker
 
-### 第二步，安装 docker。
+#### 第二步，安装 docker。
 
 安装 docker 有三种方式：
 
