@@ -1,6 +1,6 @@
 ---
 layout: post
-title: docker 持续集成（1） - 安装 jenkins
+title: docker 持续集成（2） - 安装 jenkins
 categories:
 - dev
 tags:
