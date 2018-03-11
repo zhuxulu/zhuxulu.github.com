@@ -1,7 +1,7 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
 url: http://zhuxulu.com
-author: Tom
+author: ZHU
 pygments: true
 paginate: 17
 auto: true
