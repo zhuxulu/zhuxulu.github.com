@@ -3,13 +3,15 @@ title: About me
 layout: page
 comments: no
 ---
+
+<br />
 #### 联系我
 
 + Mail: <zhuxulus@gmail.com>
 + GitHub: [https://github.com/zhuxulu](https://github.com/zhuxulu)
 + 微信：zhuxulu
 
-
+<br />
 #### 关于本站模板
 
 本站模板抄袭自[Geeklu](http://geeklu.com)，稍微做了一点修改。我第一眼就喜欢上这种简洁、高效的设计。
