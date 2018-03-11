@@ -46,18 +46,21 @@ tags:
 
 1. 在 credentials - system - global credentials 中，新增一个凭证。填写 docker 宿主机的用户名和密码。
 
-![]()
+![](zhuxulu.github.com/assets/post-images/jenkins-credentials.png)
 
 2. 在系统管理 - 系统设置 - SSH remote hosts 中，填入 docker 宿主机的 ip 地址和端口，Credentials 选择刚才我们填写的凭证。
 
-![]()
+![](zhuxulu.github.com/assets/post-images/jenkins-ssh-remote-hosts.png)
 
-3. 新建一个任务，在“构建触发器”中，选中 poll SCM，按照规则填写，例如 H/60 * * * * 为每60分钟触发一次。
+3. 新建一个任务，在“构建触发器”中，选中 Build periodically，按照规则填写，例如 H/60 * * * * 为每60分钟触发一次。
 
-![]()
+![](zhuxulu.github.com/assets/post-images/jenkins-task-bulid-periodically.png)
 
 4. 在任务的“构建”中，增加构建步骤，SSH site 选择刚才我们填写的 docker 宿主机地址，Command 中填写 “~/project/ci.sh”
 
-![]()
+![](zhuxulu.github.com/assets/post-images/jenkins-task-build-step.png)
 
 5. 保存任务，然后点击“立即构建”，构建成功后，可以打开浏览器访问 tomcat 了。
+
+poll SCM 的完整规则如下：
+
