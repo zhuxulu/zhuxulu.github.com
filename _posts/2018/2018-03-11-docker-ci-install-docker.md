@@ -13,11 +13,11 @@ tags:
 - tomcat
 ---
 
-### 安装 docker
+#### 安装 docker
 
-以 centos 7 为例。官方文档：官方文档：[https://docs.docker.com/](https://docs.docker.com/install/linux/docker-ce/centos/) 。
+以 centos 7 作为安装环境。官方文档：[https://docs.docker.com/](https://docs.docker.com/install/linux/docker-ce/centos/) 。
 
-### 第一步，卸载 docker 的旧版本。
+#### 一、卸载 docker 的旧版本。
 
 如果没有旧版本可省略这一步。
 
@@ -36,7 +36,7 @@ tags:
 
     sudo rm -rf /var/lib/docker
 
-### 第二步，安装 docker。
+#### 二、安装 docker。
 
 安装 docker 有三种方式：
 
