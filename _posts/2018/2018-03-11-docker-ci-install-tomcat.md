@@ -30,5 +30,5 @@ tags:
         --name tomcat \
         tomcat:7.0.85-jre7
 
-参考：[https://hub.docker.com/_/tomcat/](https://hub.docker.com/_/tomcat/)
+参考：[https://hub.docker.com/\_/tomcat/](https://hub.docker.com/\_/tomcat/)
 
