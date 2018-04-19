@@ -31,7 +31,12 @@ tags:
 ![](http://zhuxulu.github.com/assets/post-images/jenkins-email-recipient.png)
 
 - `Content Type` 选择 `HTML(text\html)`
-- `Default Subject` 邮件标题，填写：构建通知:${BUILD_STATUS} - ${PROJECT_NAME} - Build # ${BUILD_NUMBER} !
+- `Default Subject` 邮件标题，填写：
+    
+    ```
+    构建通知:${BUILD_STATUS} - ${PROJECT_NAME} - Build # ${BUILD_NUMBER} !
+    ```
+
 - `	Default Content` 邮件内容，按照下方内容填写：
 
     ```
@@ -49,7 +54,7 @@ tags:
     ${JELLY_SCRIPT,template="html"}<br/>
     ${JELLY_SCRIPT,template="html"}<br/>
     ```
-    
+
 - `Attach Build Log` 选择 `Attach Build Log`，将日志当作附件附加到邮件中。
 
 保存任务后我们可以手动触发一下任务，看看是否能够收到邮件，构建成功的邮件通知如下：
