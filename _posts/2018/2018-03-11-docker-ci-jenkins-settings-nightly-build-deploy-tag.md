@@ -83,7 +83,7 @@ Repository`, 展开 `Deploy Keys`，将拷贝的公钥填入到 `key` 里，`tit
 
 ![](http://zhuxulu.github.com/assets/post-images/jenkins-sourcemanage-credentials.png)
 
-    这里的凭证我们也可以更换为 ssh key，需要在jenkins所在服务器生成，但是由于我们的Jenkins是运行在docker容器中，并且没有将docker宿主机中的`.ssh`目录映射到容器中，所以我们采用用户名密码的凭证方式，缺点是gitlab不是https方式访问，不安全。
+这里的凭证我们也可以更换为 ssh key，需要在jenkins所在服务器生成，但是由于我们的Jenkins是运行在docker容器中，并且没有将docker宿主机中的`.ssh`目录映射到容器中，所以我们采用用户名密码的凭证方式，缺点是gitlab不是https方式访问，不安全。
 
 在`构建触发器`中，我们按照定时触发的方式来执行任务，选择`Build periodically`，在`日程表`中填写:
 
@@ -101,8 +101,8 @@ Repository`, 展开 `Deploy Keys`，将拷贝的公钥填入到 `key` 里，`tit
     
 意思是去执行`easygo-web`目录下的`build_deploy.sh`这个脚本。前面的`~`代表是登陆用户的home目录，可以更换为上文中所说的工作文件夹，一定要是绝对路径，并且确保jenkins系统管理中配置的ssh账号对该目录有读写执行权限。
 
-    注意：
-    当真正去执行Jenkins的这个任务时，可能会出现`build_deploy.sh`文件没有执行权限的错误，需要在git提交时对文件权限做相应的修改，使用如下代码：
+注意：当真正去执行Jenkins的这个任务时，可能会出现`build_deploy.sh`文件没有执行权限的错误，需要在git提交时对文件权限做相应的修改，使用如下代码：
+    
     git update-index --chmod=+x build_deploy.sh
 
 然后我们在`构建后操作`中，点击`增加构建后操作步骤`，选择`Git Publisher`，勾选第一项`Push Only If Build Succeeds`，只有在构建成功后才操作。然后在`Tags`中的`Tag to Push`，填写tag的名称，一般情况下只能用Jenkins的内置变量，例如构建编号`$BUILD_NUMBER`，假如我们还想用日期作为tag的名称，就需要用到插件。
