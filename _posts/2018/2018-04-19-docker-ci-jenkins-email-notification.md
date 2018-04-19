@@ -33,11 +33,9 @@ tags:
 - `Content Type` 选择 `HTML(text\html)`
 - `Default Subject` 邮件标题，填写：
     
-    ```
     构建通知:${BUILD_STATUS} - ${PROJECT_NAME} - Build # ${BUILD_NUMBER} !
-    ```
 
-- `	Default Content` 邮件内容，按照下方内容填写：
+- `Default Content` 邮件内容，按照下方内容填写：
 
     ```
     <hr/>
