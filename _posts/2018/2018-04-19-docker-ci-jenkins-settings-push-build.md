@@ -13,7 +13,7 @@ tags:
 - tomcat
 ---
 
-之前我们在 !(配置 jenkins，实现每日构建、发布、打标签)[http://zhuxulu.com/2018/03/docker-ci-jenkins-settings-nightly-build-deploy-tag/] 中介绍了jenkins、gitlab的基础配置，以及如何创建一个定时任务。现在我们在上篇文章的基础上建立一个通过 `gitlab webhook` 触发的任务，内容是当开发人员提交代码到仓库master分支时，自动触发jenkins的构建任务，对代码进行自动编译。
+之前我们在 [配置 jenkins，实现每日构建、发布、打标签](http://zhuxulu.com/2018/03/docker-ci-jenkins-settings-nightly-build-deploy-tag/) 中介绍了jenkins、gitlab的基础配置，以及如何创建一个定时任务。现在我们在上篇文章的基础上建立一个通过 `gitlab webhook` 触发的任务，内容是当开发人员提交代码到仓库master分支时，自动触发jenkins的构建任务，对代码进行自动编译。
 
 首先在工程git仓库根目录下新建一个shell脚本，取名叫 “push_build.sh”，内容如下：
 
