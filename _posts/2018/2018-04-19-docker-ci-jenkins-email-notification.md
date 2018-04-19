@@ -1,6 +1,6 @@
 ---
 layout: post
-title: docker 持续集成（7） - 配置 jenkins 邮件通知
+title: docker 持续集成（8） - 配置 jenkins 邮件通知
 categories:
 - dev
 tags:
@@ -34,6 +34,7 @@ tags:
 - `Default Subject` 邮件标题，填写：构建通知:${BUILD_STATUS} - ${PROJECT_NAME} - Build # ${BUILD_NUMBER} !
 - `	Default Content` 邮件内容，按照下方内容填写：
 
+    ```
     <hr/>
     构建状态：$BUILD_STATUS<br/>
     项目名称：$PROJECT_NAME<br/>
@@ -47,7 +48,8 @@ tags:
     <hr/>
     ${JELLY_SCRIPT,template="html"}<br/>
     ${JELLY_SCRIPT,template="html"}<br/>
-
+    ```
+    
 - `Attach Build Log` 选择 `Attach Build Log`，将日志当作附件附加到邮件中。
 
 保存任务后我们可以手动触发一下任务，看看是否能够收到邮件，构建成功的邮件通知如下：
