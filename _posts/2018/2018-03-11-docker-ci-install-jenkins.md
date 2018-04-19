@@ -35,4 +35,14 @@ tags:
 
     docker logs -f jenkins
 
+jenkins 启动后，会要求输入一个字符串，并且提示该字符串的位置，这个字符串能够在 `/var/jenkins_home` 目录下对应位置找到。
+
+jenkins 启动后，我们可以安装推荐的插件，此外有些有用的插件最好也安装以下。例如：
+
+- gitlab 插件
+- Build Timestamp Plugin
+- Email Extension Plugin
+
+插件的作用后续章节会介绍。
+
 参考：[https://github.com/jenkinsci/docker/](https://github.com/jenkinsci/docker/blob/master/README.md)
